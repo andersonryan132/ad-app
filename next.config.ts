@@ -13,6 +13,38 @@ const nextConfig: NextConfig = {
         source: "/login",
         destination: `${serverUrl}/login`,
       },
+      {
+        source: "/auth/authorize-role",
+        destination: `${serverUrl}/auth/authorize-role`,
+      },
+      {
+        source: "/users",
+        destination: `${serverUrl}/users`,
+      },
+      {
+        source: "/inventory/categories",
+        destination: `${serverUrl}/inventory/categories`,
+      },
+      {
+        source: "/inventory/products",
+        destination: `${serverUrl}/inventory/products`,
+      },
+      {
+        source: "/inventory/transfer-requests",
+        destination: `${serverUrl}/inventory/transfer-requests`,
+      },
+      {
+        source: "/inventory/transfer-requests/:path*",
+        destination: `${serverUrl}/inventory/transfer-requests/:path*`,
+      },
+      {
+        source: "/vehicles",
+        destination: `${serverUrl}/vehicles`,
+      },
+      {
+        source: "/fuelings",
+        destination: `${serverUrl}/fuelings`,
+      },
     ];
   },
 };

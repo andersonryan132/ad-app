@@ -28,6 +28,14 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   if (!event.request.url.startsWith(self.location.origin)) return;
 
+  const url = new URL(event.request.url);
+  const noCachePaths = ["/users", "/inventory", "/auth", "/vehicles", "/fuelings"];
+  const isApiRequest = noCachePaths.some((path) => url.pathname === path || url.pathname.startsWith(`${path}/`));
+  if (isApiRequest) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) return cachedResponse;
