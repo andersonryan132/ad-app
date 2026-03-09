@@ -67,13 +67,14 @@ export default function AdminEstoqueProdutosPage() {
       }
 
       const payload = (await response.json()) as { ok?: boolean; categories?: StockCategory[] };
+      const categoriesFromPayload = Array.isArray(payload?.categories) ? payload.categories : [];
       if (payload?.ok === false || !Array.isArray(payload.categories)) {
         throw new Error("Resposta invalida da API de categorias.");
       }
 
-      setCategories(payload.categories);
-      if (payload.categories.length > 0 && !form.categoryId) {
-        setForm((prev) => ({ ...prev, categoryId: String(payload.categories[0].id) }));
+      setCategories(categoriesFromPayload);
+      if (categoriesFromPayload.length > 0 && !form.categoryId) {
+        setForm((prev) => ({ ...prev, categoryId: String(categoriesFromPayload[0].id) }));
       }
     } catch (exception) {
       const message = exception instanceof Error ? exception.message : "Erro inesperado ao carregar categorias.";
