@@ -22,12 +22,24 @@ const nextConfig: NextConfig = {
         destination: `${serverUrl}/users`,
       },
       {
+        source: "/users/names",
+        destination: `${serverUrl}/users/names`,
+      },
+      {
+        source: "/ocorrencias",
+        destination: `${serverUrl}/ocorrencias`,
+      },
+      {
         source: "/inventory/categories",
         destination: `${serverUrl}/inventory/categories`,
       },
       {
         source: "/inventory/products",
         destination: `${serverUrl}/inventory/products`,
+      },
+      {
+        source: "/inventory/me",
+        destination: `${serverUrl}/inventory/me`,
       },
       {
         source: "/inventory/transfer-requests",

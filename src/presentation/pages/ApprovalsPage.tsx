@@ -5,8 +5,7 @@ import { useRouter } from "next/navigation";
 
 const AUTH_TOKEN_KEY = "auth_token";
 const AUTH_TOKEN_TIMESTAMP_KEY = "auth_token_created_at";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_SERVER ?? "http://localhost:8000";
-const APPROVALS_ENDPOINT = `${API_BASE_URL.replace(/\/$/, "")}/inventory/transfer-requests`;
+const APPROVALS_ENDPOINT = "/inventory/transfer-requests";
 
 type ApprovalStatus = "pending" | "approved" | "rejected" | string;
 

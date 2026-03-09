@@ -5,10 +5,9 @@ import { useRouter } from "next/navigation";
 
 const AUTH_TOKEN_KEY = "auth_token";
 const AUTH_TOKEN_TIMESTAMP_KEY = "auth_token_created_at";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_SERVER ?? "http://localhost:8000";
-const INVENTORY_ENDPOINT = `${API_BASE_URL.replace(/\/$/, "")}/inventory/me`;
-const USERS_NAMES_ENDPOINT = `${API_BASE_URL.replace(/\/$/, "")}/users/names`;
-const TRANSFER_REQUESTS_ENDPOINT = `${API_BASE_URL.replace(/\/$/, "")}/inventory/transfer-requests`;
+const INVENTORY_ENDPOINT = "/inventory/me";
+const USERS_NAMES_ENDPOINT = "/users/names";
+const TRANSFER_REQUESTS_ENDPOINT = "/inventory/transfer-requests";
 
 type InventoryItem = {
   productId: number;

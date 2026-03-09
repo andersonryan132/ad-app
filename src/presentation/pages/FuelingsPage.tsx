@@ -5,9 +5,8 @@ import { useRouter } from "next/navigation";
 
 const AUTH_TOKEN_KEY = "auth_token";
 const AUTH_TOKEN_TIMESTAMP_KEY = "auth_token_created_at";
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_SERVER ?? "http://localhost:8000";
-const FUELINGS_ENDPOINT = `${API_BASE_URL.replace(/\/$/, "")}/fuelings`;
-const VEHICLES_ENDPOINT = `${API_BASE_URL.replace(/\/$/, "")}/vehicles`;
+const FUELINGS_ENDPOINT = "/fuelings";
+const VEHICLES_ENDPOINT = "/vehicles";
 
 type FuelingUser = {
   id: number;
