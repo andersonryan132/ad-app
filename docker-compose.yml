@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
+        NODE_VERSION: ${NODE_VERSION:-24}
         NEXT_PUBLIC_API_SERVER: ${NEXT_PUBLIC_API_SERVER:-http://45.169.83.78:8001}
     image: ad-app:latest
     container_name: ad-app
