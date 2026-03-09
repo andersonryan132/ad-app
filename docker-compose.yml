@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_SERVER: ${NEXT_PUBLIC_API_SERVER:-http://45.169.83.78:8001}
+    image: ad-app:latest
+    container_name: ad-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_SERVER: ${NEXT_PUBLIC_API_SERVER:-http://45.169.83.78:8001}
+    volumes:
+      - next_cache:/app/.next/cache
+
+volumes:
+  next_cache:
