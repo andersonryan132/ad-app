@@ -12,8 +12,9 @@ services:
     container_name: ad-app
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
+      PORT: 3001
       NEXT_PUBLIC_API_SERVER: ${NEXT_PUBLIC_API_SERVER:-http://45.169.83.78:8001}
     volumes:
       - next_cache:/app/.next/cache
