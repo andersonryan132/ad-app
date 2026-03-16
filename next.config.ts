@@ -57,6 +57,14 @@ const nextConfig: NextConfig = {
         source: "/fuelings",
         destination: `${serverUrl}/fuelings`,
       },
+      {
+        source: "/vehicle-location-history",
+        destination: `${serverUrl}/vehicle-location-history`,
+      },
+      {
+        source: "/vehicle-location-history/:path*",
+        destination: `${serverUrl}/vehicle-location-history/:path*`,
+      },
     ];
   },
 };
