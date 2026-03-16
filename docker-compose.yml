@@ -8,6 +8,7 @@ services:
       args:
         NODE_VERSION: ${NODE_VERSION:-24}
         NEXT_PUBLIC_API_SERVER: ${NEXT_PUBLIC_API_SERVER:-http://45.169.83.78:8001}
+        NEXT_PUBLIC_READER_AUTH_TOKEN: ${NEXT_PUBLIC_READER_AUTH_TOKEN}
     image: ad-app:latest
     container_name: ad-app
     restart: unless-stopped
@@ -16,6 +17,7 @@ services:
     environment:
       PORT: 3002
       NEXT_PUBLIC_API_SERVER: ${NEXT_PUBLIC_API_SERVER:-http://45.169.83.78:8001}
+      NEXT_PUBLIC_READER_AUTH_TOKEN: ${NEXT_PUBLIC_READER_AUTH_TOKEN}
     volumes:
       - next_cache:/app/.next/cache
 
